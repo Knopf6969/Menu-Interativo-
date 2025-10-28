@@ -56,3 +56,50 @@ def carregar_dados(treinos):
         registrar_log(f"ERRO ao carregar dados: {e}")
         print(f"ERRO: Não foi possível carregar os dados. {e}")
 
+def editar_treino(treinos):
+    """Função para edição."""
+    print("\n--- EDITAR TREINO ---")
+    listar_treinos(treinos)
+    if not treinos:
+        return
+
+    try:
+        indice = int(input("Digite o número do treino que deseja editar: ")) - 1
+        if 0 <= indice < len(treinos):
+            treino = treinos[indice]
+            print(f"\nEditando Treino #{indice + 1} - Dia: {treino['dia_semana']}")
+            
+            # Permite editar campo por campo
+            for chave in CHAVES_TREINO:
+                valor_atual = treino.get(chave, '')
+                novo_valor = input(f"[{chave.replace('_', ' ').title()}] Valor Atual: '{valor_atual}'. Novo Valor (Enter para manter): ")
+                if novo_valor:
+                    treino[chave] = novo_valor
+            
+            salvar_dados(treinos)
+            print("\nTreino editado com sucesso!")
+        else:
+            print("Número de treino inválido.")
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número.")
+
+def deletar_treino(treinos):
+    print("\n--- DELETAR TREINO ---")
+    listar_treinos(treinos)
+    if not treinos:
+        return
+
+            print("Número de treino inválido.")
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número.")
+
+   try:
+        indice = int(input("Digite o número do treino que deseja DELETAR: ")) - 1
+        if 0 <= indice < len(treinos):
+            treino_deletado = treinos.pop(indice)
+            salvar_dados(treinos)
+            print(f"\nTreino do dia '{treino_deletado['dia_semana']}' deletado com sucesso!")
+        else:
+            #Tratei a função try que estava dando quebra de código
+
+
