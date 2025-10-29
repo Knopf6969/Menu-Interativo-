@@ -2,7 +2,7 @@ REGISTRO DE TREINOS
 
 O sistema é uma aplicação de console desenvolvida em **Python** para gerenciamento de rotinas de exercícios.
 
-PRINCIPAIS FUNçÕES:
+PRINCIPAIS FUNÇÕES:
 *   Cadastro, Listagem, Edição e Exclusão de treinos.
 *   Persistência de dados em arquivo.
 *   Registro de logs de sistema.
