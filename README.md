@@ -11,6 +11,6 @@ Trabalho facultativo do Curso de Ciências da Computação - Atitus Educação
 
 Integrantes do Projeto:
 
-Igor Ferenci Knopf RA: 1138940
-João Vinicius dos Santos RA: 1138924
-Arthur Augusto Monteiro de Almeida RA: 1138981
+* Igor Ferenci Knopf RA: 1138940
+* João Vinicius dos Santos RA: 1138924
+* Arthur Augusto Monteiro de Almeida RA: 1138981
