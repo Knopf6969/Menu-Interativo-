@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 
 # Estrutura de dados padronizada para um treino
-# Usaremos chaves curtas e padronizadas para consistência
+# Usaremos chaves para melhor organização
 CHAVES_TREINO = [
     "dia_semana",
     "grupo_muscular",
@@ -14,7 +14,6 @@ CHAVES_TREINO = [
 
 def limpar_terminal():
     """Limpa o terminal (compatível com Windows e Linux/macOS)."""
-    # 'cls' para Windows, 'clear' para Linux/macOS
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def registrar_log(acao_do_usuario):
@@ -42,7 +41,7 @@ def carregar_dados(treinos):
                 if not linha.strip():
                     continue
                 
-                # Usa desempacotamento seguro para evitar erros se a linha estiver incompleta
+            
                 partes = linha.strip().split(";")
                 if len(partes) == len(CHAVES_TREINO):
                     treino_dict = dict(zip(CHAVES_TREINO, partes))
@@ -77,7 +76,7 @@ def cadastrar_treino(treinos):
     """Pede as informações ao usuário e cadastra um novo treino, usando chaves padronizadas."""
     print("--- CADASTRO DE NOVO TREINO ---")
     
-    # Usando variáveis em snake_case para seguir a PEP 8
+    # Usando variáveis em snake_case 
     dia_semana = input("Informe o dia da semana: ")
     grupo_muscular = input("Informe o Grupo Muscular alvo: ")
     exercicios = input("Liste os exercícios: ")
@@ -101,7 +100,7 @@ def cadastrar_treino(treinos):
 
 def listar_treinos(treinos):
     """Lista todos os treinos cadastrados, com correção de sintaxe e exibição."""
-    if len(treinos) == 0: # Correção de 'o' para '0'
+    if len(treinos) == 0:
         print("Nenhum treino localizado.")
         return
 
@@ -129,7 +128,7 @@ def editar_treino(treinos):
             treino = treinos[indice]
             print(f"\nEditando Treino #{indice + 1} - Dia: {treino['dia_semana']}")
             
-            # Permite editar campo por campo
+        
             for chave in CHAVES_TREINO:
                 valor_atual = treino.get(chave, '')
                 novo_valor = input(f"[{chave.replace('_', ' ').title()}] Valor Atual: '{valor_atual}'. Novo Valor (Enter para manter): ")
