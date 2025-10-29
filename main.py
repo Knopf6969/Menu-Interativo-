@@ -21,13 +21,13 @@ def main():
 """)
 
         try:
-            # Tratamento de entrada para evitar crash por ValueError
+            # Tratamento de entrada para evitar crash
             escolha_do_usuario = int(input("Escolha a opção desejada: "))
         except ValueError:
             funcoes.registrar_log("Usuário informou uma opção inválida (não-numérica)")
             print("Opção inválida. Por favor, digite um número de 1 a 5.")
             input("Pressione Enter para continuar...")
-            continue # Volta para o início do loop
+            continue # Volta para o início
 
         funcoes.limpar_terminal()
         print(f"Opção escolhida: {escolha_do_usuario}\n")
@@ -39,10 +39,10 @@ def main():
             funcoes.listar_treinos(treinos)
             funcoes.registrar_log("Listar treinos existentes")
         elif escolha_do_usuario == 3:
-            funcoes.editar_treino(treinos) # Chamada da nova função
+            funcoes.editar_treino(treinos) 
             funcoes.registrar_log("Editar treinos existentes")
         elif escolha_do_usuario == 4:
-            funcoes.deletar_treino(treinos) # Chamada da nova função
+            funcoes.deletar_treino(treinos)
             funcoes.registrar_log("Deletar treinos existentes")
         elif escolha_do_usuario == 5:
             print ("Saindo do menu...")
@@ -57,3 +57,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
